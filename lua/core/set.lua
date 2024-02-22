@@ -10,7 +10,9 @@ vim.opt.smartindent = true
 
 vim.opt.wrap = false
 
-vim.opt.undodir = os.getenv("HOME") .. "/.cache/undodir"
+-->:(
+local path_separator = vim.fn.has("win32") == 1 and "\\" or "/"
+vim.opt.undodir = vim.fn.stdpath("cache") .. path_separator .. "undodir"
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false
