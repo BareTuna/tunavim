@@ -19,7 +19,7 @@ local plugin_spec = {
 			"BufNewFile",
 		},
         opts = require("plugins.configs.treesitter"),
-		config = function(opts)
+		config = function(_, opts)
 			require("nvim-treesitter.configs").setup(opts)
 		end,
 	},
@@ -41,7 +41,12 @@ local plugin_spec = {
 			"nvim-tree/nvim-web-devicons",
 			optional = true
 		},
-        opts = require("plugins.configs.lualine"),
+        opts = require("plugins.configs.luazine"),
+        config = function(_, opts)
+            --local custom_component = require("plugins.configs.chfn")
+            --opts.sections.lualine_c = {custom_component}
+            require("lualine").setup(opts)
+        end,
 	},
 
 	{
@@ -57,7 +62,7 @@ local plugin_spec = {
     {
         "BareTuna/autoclose.nvim",
         name = "autoclose",
-        config = true,
+        opts = require("plugins.configs.autoclose"),
     },
 
 

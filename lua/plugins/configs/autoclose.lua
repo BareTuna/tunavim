@@ -1,4 +1,4 @@
-require("autoclose").setup {
+return {
    keys = {
       ["("] = { escape = false, close = true, pair = "()" },
       ["["] = { escape = false, close = true, pair = "[]" },
@@ -9,9 +9,9 @@ require("autoclose").setup {
       ["]"] = { escape = true, close = false, pair = "[]" },
       ["}"] = { escape = true, close = false, pair = "{}" },
 
-      ['"'] = { escape = true, close = true, pair = '""' },
+      ['"'] = { escape = true, close = false, pair = '""' },
       ["'"] = { escape = false, close = false, pair = "''" },
-      ["`"] = { escape = true, close = true, pair = "``" },
+      ["`"] = { escape = true, close = false, pair = "``" },
       -- <BS>, <C-H> and more in
       -- ~/.config/nvim/site/pack/packer/start/autoclose.nvim/lua/autoclose.lua
    },

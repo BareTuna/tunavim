@@ -24,6 +24,8 @@ vim.opt.colorcolumn = "100"
 
 vim.opt.showmode = false
 
+vim.opt.signcolumn = "yes"
+
 
 -- focus nvim tree
 vim.keymap.set("n", "<leader>e", ":NvimTreeFocus<CR>")
@@ -35,8 +37,8 @@ vim.keymap.set("n", "<leader>k", "<C-w>k")
 vim.keymap.set("n", "<leader>l", "<C-w>l")
 
 -- move across tabs
-vim.keymap.set("n", "<C-h>", ":tabp<CR>")
-vim.keymap.set("n", "<C-l>", ":tabn<CR>")
+vim.keymap.set("n", "<C-h>", "<cmd>bp<CR>")
+vim.keymap.set("n", "<C-l>", "<cmd>bn<CR>")
 --vim.keymap.set("n", "<C-j>", "")
 --vim.keymap.set("n", "<C-k>", "")
 
@@ -73,18 +75,21 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- keep cursor as-is when J'ing or gJ'ing
-vim.keymap.set("n", "J", "m`J``")
-vim.keymap.set("n", "gJ", "m`gJ``")
+--vim.keymap.set("n", "J", "m`J``")
+--vim.keymap.set("n", "gJ", "m`gJ``")
 
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 
+for i = 1, 10, 1 do
+    vim.keymap.set({"n", "t"}, "<M-"..i..">", "<cmd>LualineBuffersJump "..i.."<CR>")
+end
+
 -- hardcoded into autoclose plugin (sad, but whatever)
 --vim.keymap.set("i", "<C-h>", "<C-w>") 
 
 --vim.keymap.set("i", "<Esc>", "<Esc><cmd>silent write<CR>")
-vim.cmd("autocmd TextChanged,TextChangedI *.rs silent write")
 
 vim.cmd("autocmd TermOpen * setlocal nonu nornu")
 

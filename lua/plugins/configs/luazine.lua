@@ -34,37 +34,28 @@ return {
         lualine_z = {}
     },
     tabline = {
-        lualine_a = {
-            {
-                'tabs',
-                mode = 2
-            }
-        },
+        lualine_a = {{'buffers', mode = 2}},
         lualine_b = {},
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
-        lualine_z = {
-            {
-                "windows",
-            }
-        },
+        lualine_z = {},
     },
     winbar = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = {'filename'},
-        lualine_x = {},
-        lualine_y = {},
-        lualine_z = {},
+        --lualine_a = {},
+        --lualine_b = {},
+        --lualine_c = {'filename'},
+        --lualine_x = {},
+        --lualine_y = {},
+        --lualine_z = {'searchcount'},
     },
     inactive_winbar = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = {'filename'},
-        lualine_x = {},
-        lualine_y = {},
-        lualine_z = {},
+        --lualine_a = {},
+        --lualine_b = {},
+        --lualine_c = {'filename'},
+        --lualine_x = {},
+        --lualine_y = {},
+        --lualine_z = {},
     },
     extensions = {"nvim-tree"}
 }
